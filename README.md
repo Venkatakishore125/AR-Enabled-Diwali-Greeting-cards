@@ -1,34 +1,36 @@
 # AR-Enabled Diwali Greeting Cards
 
-An academic project focused on presenting Diwali greeting cards through an augmented-reality (AR) experience. The repository currently contains the project report and this documentation; the Unity project source, scenes, assets, and a runnable demo are not included yet.
+This academic project explores how augmented reality could make a traditional Diwali greeting card more interactive by connecting a printed or digital card with a digital experience.
 
-## Project overview
+I have kept this repository focused on the material that is currently available. At the moment, it contains the project report and this README; it does not contain a complete Unity project that someone can open and run.
 
-Traditional greeting cards are usually viewed as printed or flat digital designs. This project explores an AR-based way to make Diwali greetings more interactive by connecting a greeting-card design with a digital experience.
+## Project idea
 
-> **Repository status:** Documentation and project report are available. The complete Unity implementation is not currently present in this repository, so the AR workflow and supported features cannot yet be independently verified from the files here.
+A greeting card is usually a printed design or a flat image. The idea behind this project is to make the greeting more engaging with an augmented-reality experience.
 
-## Project goals
+The project goals are to:
 
-- Explore how augmented reality can make greeting cards more engaging.
-- Present a Diwali-themed greeting in a digital, interactive format.
-- Explore audio feedback as part of the user experience.
-- Document the project clearly so that it can be reviewed and reproduced when the source files are added.
+- Explore an AR-based Diwali greeting experience.
+- Present festive visual content in a more interactive way.
+- Consider audio feedback as part of the experience.
+- Document the idea and the development approach.
 
-## Technology
+## Technology notes
 
-The existing README included a C# script using Unity's `MonoBehaviour`, `AudioSource`, and `AudioClip` APIs. This indicates a Unity/C# component was part of the project. The specific AR SDK, Unity version, target platform, and device requirements are not documented in the current repository.
+The existing documentation refers to Unity's C# APIs, including `MonoBehaviour`, `AudioSource` and `AudioClip`.
 
-| Area | Current evidence |
+| Area | What is currently documented |
 |---|---|
 | Programming language | C# |
-| Development environment | Unity APIs are referenced in the existing code snippet |
-| AR framework | Not specified in the repository |
-| Target platform | Not specified in the repository |
+| Development environment | Unity APIs are referenced |
+| AR SDK or tracking method | Not specified in the uploaded files |
+| Target device | Not specified in the uploaded files |
 
-## Audio script reference
+I have not listed an AR SDK or Unity version because those details are not confirmed by the repository files.
 
-The original README contained a sound-manager example with a method declaration placed inside another method. The corrected reference below separates the methods and checks that the required audio references are assigned.
+## Example: playing a greeting sound in Unity
+
+The following is a small reference example for playing an assigned audio clip. It is included as documentation; it is not represented as an existing source file in this repository.
 
 ```csharp
 using UnityEngine;
@@ -36,20 +38,20 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip audioClip;
+    [SerializeField] private AudioClip greetingClip;
 
-    public void PlaySound()
+    public void PlayGreeting()
     {
-        if (audioSource == null || audioClip == null)
+        if (audioSource == null || greetingClip == null)
         {
-            Debug.LogWarning("Assign an AudioSource and AudioClip in the Inspector.");
+            Debug.LogWarning("Please assign the AudioSource and greeting clip.");
             return;
         }
 
-        audioSource.PlayOneShot(audioClip);
+        audioSource.PlayOneShot(greetingClip);
     }
 
-    public void StopSound()
+    public void StopGreeting()
     {
         if (audioSource != null)
         {
@@ -59,63 +61,36 @@ public class SoundManager : MonoBehaviour
 }
 ```
 
-This is a documentation example, not a claim that the script is currently included in the repository. Add it as a Unity C# file under `Assets/Scripts/` if it matches the implementation you want to use.
-
 ## Repository contents
 
-- `AR Enabled greeting cards Report.docx` — project report.
-- `README.md` — project overview and documentation.
+- `AR Enabled greeting cards Report.docx` — the project report.
+- `README.md` — project overview and current repository notes.
+- `.gitignore` — excludes common generated files.
 
-The Unity source code, scenes, AR image targets, greeting-card assets, audio files, screenshots, and demo video are not currently visible in this repository.
+## How to review the current upload
 
-## How to review the project
+1. Open the Word report and review the project description and details included there.
+2. Use this README as a guide to the current repository scope.
+3. The application cannot be built from this repository yet because the Unity scenes, scripts, assets and project settings are not included.
 
-1. Open and read the project report linked in the repository.
-2. Review the project goals and implementation details described in the report.
-3. When the original Unity project is available, add the source files and the exact setup steps here.
-4. Capture screenshots or a short demo video of the working application and add them to a `Screenshots/` or `Demo/` folder.
+## Next steps for a complete project repository
 
-There are no verified build or run instructions yet because the Unity project files and configuration are not included.
+When the original project files are available, I would like to add:
 
-## Suggested repository structure
+- The Unity project, including `Assets`, `Packages` and `ProjectSettings`.
+- The actual AR tracking or image-target setup used.
+- Screenshots of the application running on a device.
+- A short demo video.
+- The Unity version, device requirements and build instructions.
 
-When the original project files are available, consider organising them like this:
+Only the files used by the actual project should be added. Unity-generated folders such as `Library/`, `Temp/` and `Obj/` should stay out of Git.
 
-```text
-AR-Enabled-Diwali-Greeting-cards/
-├── Assets/
-│   ├── Scenes/
-│   ├── Scripts/
-│   ├── Images/
-│   ├── Audio/
-│   └── Prefabs/
-├── ProjectSettings/
-├── Packages/
-├── Documentation/
-│   └── AR-Enabled-Greeting-Cards-Report.docx
-├── Screenshots/
-├── Demo/
-├── .gitignore
-└── README.md
-```
+## About
 
-Only add folders and files that belong to the actual project. Avoid uploading generated Unity folders such as `Library/`, `Temp/`, and `Obj/`.
+This is an academic project documented by **Venkata Kishore Seelam**.
 
-## Future improvements
-
-- Add the complete Unity project, including scenes and scripts.
-- Document the AR framework and image-tracking or marker-detection workflow actually used.
-- Add screenshots showing the application running.
-- Add a short demonstration video.
-- Record the Unity version, device requirements, and exact build steps.
-- Test the setup instructions on a clean environment.
-
-## Author
-
-**Venkatakishore125**
-
-GitHub: [@Venkatakishore125](https://github.com/Venkatakishore125)
+[GitHub profile](https://github.com/Venkatakishore125)
 
 ---
 
-If you are reviewing this repository, please note that the current upload is a project report and documentation snapshot rather than a complete, runnable Unity project.
+**Repository status:** The report and documentation are available. A runnable Unity implementation has not been uploaded here yet.
